@@ -75,8 +75,8 @@ LOCAL FUNC(void, RESIM_CODE) receive_date_and_time(
       CONSTP2VAR(Type_infAraSwcApplTpms_eQualitySignal, RESIM_APPL_DATA, AUTOMATIC) lcptreQualitySignal
    ,  CONSTP2VAR(Type_infAraSwcApplTpms_stDateAndTime,  RESIM_APPL_DATA, AUTOMATIC) lcptrstDateAndTime
 ){
-   UNUSED(lcptrstDateAndTime);
    *lcptreQualitySignal = infAraSwcApplTpms_eQualitySignal_INVALID;
+   *lcptrstDateAndTime  = Default_infAraSwcApplTpms_stDateAndTime;
 }
 
 LOCAL FUNC(void, RESIM_CODE) receive_altitude(
@@ -101,8 +101,8 @@ LOCAL FUNC(void, RESIM_CODE) receive_vehicle_gear(
       CONSTP2VAR(Type_infAraSwcApplTpms_eQualitySignal, RESIM_APPL_DATA, AUTOMATIC) lcptreQualitySignal
    ,  CONSTP2VAR(Type_infAraSwcApplTpms_eGearVehicle,   RESIM_APPL_DATA, AUTOMATIC) lcptreGearVehicle
 ){
-   UNUSED(lcptreGearVehicle);
    *lcptreQualitySignal = infAraSwcApplTpms_eQualitySignal_INVALID;
+   *lcptreGearVehicle   = infAraSwcApplTpms_eGearVehicle_INITIALISING;
 }
 
 LOCAL FUNC(Type_infAraSwcApplTpms_eDtcSuppressionNetwork, RESIM_CODE) receive_network_dtc_suppression(void){
@@ -117,8 +117,8 @@ LOCAL FUNC(void, RESIM_CODE) receive_air_temperature(
       CONSTP2VAR(Type_infAraSwcApplTpms_eQualitySignal, RESIM_APPL_DATA, AUTOMATIC) lcptreQualitySignal
    ,  CONSTP2VAR(Type_System_tTemperature_DegC_s16,     RESIM_APPL_DATA, AUTOMATIC) lcptrtTemperatureAir
 ){
+   *lcptreQualitySignal  = infAraSwcApplTpms_eQualitySignal_INVALID;
    *lcptrtTemperatureAir = CompuMethod_Temperature_DegC_s16(Default_infAraSwcApplTpms_TemperatureAir);
-   *lcptreQualitySignal = infAraSwcApplTpms_eQualitySignal_INVALID;
 }
 
 LOCAL FUNC(void, RESIM_CODE) receive_vehicle_state(
